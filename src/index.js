@@ -1,3 +1,36 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Header Section 
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const closeBtn = document.querySelector(".close-btn");
+        const nav = document.querySelector("nav");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        // Open the navigation menu
+        hamburger.addEventListener("click", () => {
+            nav.classList.add("open");
+        });
+
+        // Close the navigation menu
+        closeBtn.addEventListener("click", () => {
+            nav.classList.remove("open");
+        });
+
+        // Close the navigation menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("open");
+            });
+        });
+    });
+
+
+
+
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Gallery Section 
@@ -40,3 +73,27 @@ lightbox.addEventListener('click', (e) => {
     if (e.target !== e.currentTarget) return; // Ensure only clicking on the background closes it
     lightbox.style.display = 'none';
 });
+
+
+
+// small screen
+// document.addEventListener("DOMContentLoaded", () => {
+//     const gallery = document.querySelector(".gallery-grid");
+//     let scrollAmount = 0;
+  
+//     function autoScroll() {
+//       if (gallery) {
+//         scrollAmount += 1; // Pixels to scroll per frame
+//         gallery.scrollLeft = scrollAmount;
+  
+//         // Reset scroll position if at the end
+//         if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
+//           scrollAmount = 0;
+//         }
+  
+//         requestAnimationFrame(autoScroll); // Create smooth continuous scroll
+//       }
+//     }
+  
+//     autoScroll();
+//   });
