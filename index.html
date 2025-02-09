@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
     <meta charset="UTF-8">
     <meta name="description" content="Free Web tutorials"> 
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -15,7 +15,9 @@
     <!-- Header section of the page -->
     <header>
         <img src="./images/arch2 edited.jpg" alt="logo image">
+        <button class="hamburger">☰</button>
         <nav>
+          <button class="close-btn">×</button>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -46,33 +48,34 @@
 
         <!-- About section of the page  -->
         <section class="about-section" id="about">
-            <!-- Left Section with Images -->
-            <div class="about-left">
-                <div class="image-grid">
-                    <div class="image-box image-top">
-                        <img src="./practice_images/about2 image.jpg" alt="Image 2">
-                    </div>
-                    <div class="image-column">
-                        <div class="image-box">
-                            <img src="./practice_images/about4 image.jpg" alt="Image 3">
-                        </div>
-                        <div class="image-box">
-                            <img src="./practice_images/about5 image.jpg" alt="Image 4">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Right Section with About Text -->
-            <div class="about-right">
-                <h2 class="about-highlight">About Us</h2>
-                <h3 class="about-title">BEST MEMORABLE DAY OF YOUR LIFE</h3>
-                <p class="about-text">Welcome to Arch&Props, where we specialize in crafting unforgettable events tailored to your unique vision. With a dedicated team committed to excellence, we handle every detail to ensure your event is flawless and memorable. From Wedding to Birthday celebrations, we offer personalized service, creative solutions, and access to top-notch vendors. Let us turn your dreams into reality and create lasting memories together.</p>
-                <a href="#">
-                    <button class="learn-more-btn">Learn more</button>
-                </a>
-            </div>
-        </section>
-        
+          <!-- Left Section with Images -->
+          <div class="about-left">
+              <div class="image-grid">
+                  <div class="image-box image-top">
+                      <img src="./practice_images/about2 image.jpg" alt="Image 2">
+                  </div>
+                  <div class="image-column">
+                      <div class="image-box">
+                          <img src="./practice_images/about4 image.jpg" alt="Image 3">
+                      </div>
+                      <div class="image-box">
+                          <img src="./practice_images/about5 image.jpg" alt="Image 4">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Right Section with About Text -->
+          <div class="about-right">
+              <h2 class="about-highlight">About Us</h2>
+              <h3 class="about-title">BEST MEMORABLE DAY OF YOUR LIFE</h3>
+              <p class="about-text">Welcome to Arch&Props, where we specialize in crafting unforgettable events tailored to your unique vision. With a dedicated team committed to excellence, we handle every detail to ensure your event is flawless and memorable. From Wedding to Birthday celebrations, we offer personalized service, creative solutions, and access to top-notch vendors. Let us turn your dreams into reality and create lasting memories together.</p>
+              <a href="#">
+                  <button class="learn-more-btn">Learn more</button>
+              </a>
+          </div>
+      </section>
+      
 
 
         <!-- Service section of the page  -->
@@ -114,7 +117,7 @@
         <section id="gallery">
             <h2>Gallery</h2>
             <p>Explore our portfolio of stunning designs and exceptional props.</p>
-            <div class="gallery-grid">
+            <div class="gallery-grid auto-scroll">
                 <div class="gallery-grid-above">
                 <img src="./practice_images/about4 image.jpg" alt="Event 1" class="gallery-big-img">
                 <img src="./practice_images/about4 image.jpg" alt="Event 2" class="gallery-small-img">
