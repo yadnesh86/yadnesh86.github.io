@@ -82,7 +82,75 @@ nav ul li a:hover {
 
 /* ############################################################ */
 /* Responsive styles for small screens */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
+  /* Header adjusts for smaller screens */
+  header {
+    padding: 8px 15px;
+  }
+
+  /* Hamburger button visible on small screens */
+  .hamburger {
+    display: block;
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  /* Hide navigation by default */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 90%; /* Slightly smaller width */
+    background-color: #e8dad1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  /* Navigation menu open state */
+  nav.open {
+    right: 0;
+  }
+
+  /* Close button */
+  .close-btn {
+    display: block;
+    align-self: flex-end;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #8d675a;
+    background: none;
+    border: none;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+
+  /* Navigation list as a column */
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  /* Navigation items with spacing */
+  nav ul li {
+    margin: 12px 0;
+  }
+
+  /* Navigation links font size adjusts */
+  nav ul li a {
+    font-size: 16px; /* Slightly smaller font for better fit */
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 321px) and (max-width: 480px) {
   /* Header adjusts for smaller screens */
   header {
       padding: 10px 20px;
@@ -499,37 +567,78 @@ nav ul li a {
 }
 
 /* ############################################################ */
-@media screen and (max-width: 480px) {
-/* Home section adjustments */
+@media screen and (max-width: 320px) {
+  /* Home section adjustments */
+  .home-section {
+      padding: 30px 10px; /* Adds side padding for better spacing */
+      height: 75vh; /* Slightly increased height for content fit */
+      margin: 0 auto; /* Ensures proper centering */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  /* Heading adjustments */
+  .home-heading {
+      font-size: 1.8rem; /* Adjusted for better fit */
+      margin: 30px 0 15px 0; /* Optimized spacing */
+      text-align: center;
+  }
+
+  /* Paragraph adjustments */
+  .home-paragraph {
+      font-size: 0.85rem; /* Slightly reduced font size */
+      max-width: 85%; /* Keeps text width manageable */
+      margin: 0 auto; /* Centers text */
+      text-align: center;
+      line-height: 1.5; /* Improved readability */
+  }
+
+  /* Call button adjustments */
+  .call-button {
+      font-size: 0.85rem; /* Adjusted for smaller screens */
+      padding: 8px 15px; /* Better spacing for touch interaction */
+      margin: 20px auto 0; /* Centers the button */
+      display: block; /* Ensures button stays on its own line */
+      width: auto; /* Keeps width dynamic */
+      text-align: center;
+  }
+}
+
+
+/* ############################################################ */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* Home section adjustments */
 .home-section {
-    padding: 40px auto;
-    height: 70vh; /* Adjusts height for better content fit */
-    margin: 0;
+  padding: 40px auto;
+  height: 70vh; /* Adjusts height for better content fit */
+  margin: 0;
 }
 
 /* Heading adjustments */
 .home-heading {
-    font-size: 2rem; /* Reduces font size for smaller screens */
-    margin: 40px 0 20px 0px; /* Adjusts spacing for smaller screens */
-    text-align: center; /* Centers the heading for better alignment */
+  font-size: 2rem; /* Reduces font size for smaller screens */
+  margin: 40px 0 20px 0px; /* Adjusts spacing for smaller screens */
+  text-align: center; /* Centers the heading for better alignment */
 }
 
 /* Paragraph adjustments */
 .home-paragraph {
-    font-size: 0.9rem; /* Slightly smaller font for mobile readability */
-    max-width: 90%;      /* Restricts the paragraph width */
-    margin: 0 auto;      /* Centers the paragraph in its container */
-    text-align: center; /* Centers the text for smaller screens */
-    line-height: 1.4; /* Adjusts line height for compact spacing */
+  font-size: 0.9rem; /* Slightly smaller font for mobile readability */
+  max-width: 90%;      /* Restricts the paragraph width */
+  margin: 0 auto;      /* Centers the paragraph in its container */
+  text-align: center; /* Centers the text for smaller screens */
+  line-height: 1.4; /* Adjusts line height for compact spacing */
 }
 
 /* Call button adjustments */
 .call-button {
-    font-size: 0.9rem; /* Reduces font size for smaller buttons */
-    padding: 10px auto; /* Adjusts padding for smaller buttons */
-    margin: 30px auto 0 auto; /* Centers the button */
-    display: block; /* Makes the button occupy its own line */
-    width: fit-content; /* Ensures button width wraps its content */
+  font-size: 0.9rem; /* Reduces font size for smaller buttons */
+  padding: 10px auto; /* Adjusts padding for smaller buttons */
+  margin: 30px auto 0 auto; /* Centers the button */
+  display: block; /* Makes the button occupy its own line */
+  width: fit-content; /* Ensures button width wraps its content */
 }
 }
 
@@ -825,93 +934,189 @@ nav ul li a {
 }
 
 /* ############################################################ */
-@media screen and (max-width: 480px) {
-/* About Section: Flex column layout for small screens */
+@media screen and (max-width: 320px) {
+  /* About Section: Flex column layout for small screens */
+  .about-section {
+      flex-direction: column;
+      padding: 3rem 1rem; /* Keeping original padding, just reducing side space */
+      gap: 20px;
+      height: auto;
+      background-color: #f9f9f9;
+  }
+
+  /* Left Section: Centered image layout */
+  .about-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+  }
+
+  .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Keeping original 2-column structure */
+      gap: 10px; /* Slightly reduced gap for better fit */
+      margin-top: 15px;
+      width: 100%;
+  }
+
+  .image-box {
+      width: 100%; /* Keeping original concept */
+      background-color: #f1f1f1;
+      border-radius: 8px; /* Slightly reduced for better proportion */
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+  }
+
+  .image-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+  }
+
+  /* Hover effect for images */
+  .image-box:hover {
+      transform: scale(1.03);
+  }
+
+  /* Right Section: Text and Button Adjustments */
+  .about-right {
+      text-align: center;
+      padding: 0;
+      margin-top: 20px;
+  }
+
+  .about-highlight {
+      color: #ff5722;
+      font-size: 1.1rem; /* Slightly reduced for better fit */
+      margin-bottom: 8px;
+  }
+
+  .about-title {
+      font-size: 1.6rem; /* Only a slight reduction for balance */
+      font-weight: bold;
+      margin-bottom: 15px;
+  }
+
+  .about-text {
+      font-size: 0.9rem; /* Keeping readability */
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .learn-more-btn {
+      background: linear-gradient(90deg, #ff5722, #e91e63);
+      color: white;
+      font-size: 1rem; /* Keeping size intact */
+      padding: 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      width: 50%; /* Slightly increased for better touch accessibility */
+      margin: 0 auto;
+      display: block;
+  }
+
+  .learn-more-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* About Section: Flex column layout for small screens */
 .about-section {
-    flex-direction: column; /* Stack images and text vertically */
-    padding: 3rem 1.5rem;
-    gap: 20px;
-    height: auto;
-    background-color: #f9f9f9;
+  flex-direction: column; /* Stack images and text vertically */
+  padding: 3rem 1.5rem;
+  gap: 20px;
+  height: auto;
+  background-color: #f9f9f9;
 }
 
 /* Left Section: Centered image layout */
 .about-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
 }
 
 .image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 images per row */
-    gap: 15px;
-    margin-top: 20px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 images per row */
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .image-box {
-    width: 100%; /* Ensure images take full width of the grid item */
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  width: 100%; /* Ensure images take full width of the grid item */
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Hover effect for images */
 .image-box:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Right Section: Text and Button Adjustments */
 .about-right {
-    text-align: center;
-    padding: 0;
-    margin-top: 30px;
+  text-align: center;
+  padding: 0;
+  margin-top: 30px;
 }
 
 .about-highlight {
-    color: #ff5722;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  color: #ff5722;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .about-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .about-text {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .learn-more-btn {
-    background: linear-gradient(90deg, #ff5722, #e91e63);
-    color: white;
-    font-size: 1rem;
-    padding: 12px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    width: 40%;
+  background: linear-gradient(90deg, #ff5722, #e91e63);
+  color: white;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  width: 40%;
 }
 
 .learn-more-btn:hover {
-    transform: scale(1.05);
-    background-color: #d81b60;
+  transform: scale(1.05);
+  background-color: #d81b60;
 }
 }
 
@@ -1298,6 +1503,7 @@ nav ul li a {
     padding: 50px 20px;
     font-family: "DM Sans", serif;
     text-align: center;
+    width: 100%;
   }
 
   #services h2 {
@@ -1362,44 +1568,89 @@ nav ul li a {
   }
 
  /* ############################################################ */
-  @media screen and (max-width: 480px) {
-    #services {
-      padding: 30px 4%; /* Adjust padding for small screens */
-    }
-  
-    #services h2 {
-      font-size: 1.6em; /* Slightly smaller heading */
-      margin-bottom: 15px;
-    }
-  
-    #services-paragraph {
-      font-size: 0.9em; /* Slightly smaller text */
-      margin-bottom: 30px;
-    }
-  
-    /* Grid Layout */
-    .service-grid {
-      grid-template-columns: 1fr; /* Stack grid items in a single column */
-      gap: 20px; /* Reduce gap between items */
-    }
-  
-    .service-item {
-      height: 180px; /* Adjust height for smaller screens */
-    }
-  
-    .service-content {
-      padding: 15px; /* Adjust padding */
-    }
-  
-    .service-content h3 {
-      font-size: 1.3em; /* Smaller heading */
-    }
-  
-    .service-content-p {
-      font-size: 0.9em; /* Smaller paragraph text */
-    }
+ @media screen and (max-width: 320px) {
+  #services {
+      padding: 25px 5%; /* Slightly reduced padding for better spacing */
   }
+
+  #services h2 {
+      font-size: 1.5em; /* Slightly reduced heading size */
+      margin-bottom: 12px; /* Adjusted spacing */
+  }
+
+  #services-paragraph {
+      font-size: 0.85em; /* Slightly smaller text for readability */
+      margin-bottom: 25px; /* Adjusted spacing */
+      text-align: center; /* Ensures text is centered */
+  }
+
+  /* Grid Layout */
+  .service-grid {
+      grid-template-columns: 1fr; /* Keep single column layout */
+      gap: 15px; /* Reduced gap for better spacing */
+  }
+
+  .service-item {
+      height: 160px; /* Slightly reduced height to fit content */
+      display: flex;
+      align-items: center; /* Ensure content stays centered */
+  }
+
+  .service-content {
+      padding: 12px; /* Adjusted padding */
+  }
+
+  .service-content h3 {
+      font-size: 1.2em; /* Slightly reduced heading size */
+      margin-bottom: 8px; /* Improved spacing */
+  }
+
+  .service-content-p {
+      font-size: 0.85em; /* Slightly smaller text for better fit */
+      line-height: 1.4; /* Improved readability */
+  }
+}
+
   
+  /* ############################################################ */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  #services {
+    padding: 30px 4%; /* Adjust padding for small screens */
+  }
+
+  #services h2 {
+    font-size: 1.6em; /* Slightly smaller heading */
+    margin-bottom: 15px;
+  }
+
+  #services-paragraph {
+    font-size: 0.9em; /* Slightly smaller text */
+    margin-bottom: 30px;
+  }
+
+  /* Grid Layout */
+  .service-grid {
+    grid-template-columns: 1fr; /* Stack grid items in a single column */
+    gap: 20px; /* Reduce gap between items */
+  }
+
+  .service-item {
+    height: 180px; /* Adjust height for smaller screens */
+  }
+
+  .service-content {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .service-content h3 {
+    font-size: 1.3em; /* Smaller heading */
+  }
+
+  .service-content-p {
+    font-size: 0.9em; /* Smaller paragraph text */
+  }
+}
+
 /* ############################################################ */
 @media screen and (min-width: 481px) and (max-width: 767px) {
   #services {
@@ -1832,65 +2083,133 @@ nav ul li a {
 }
 
 
+/* ############################################################ */
+@media screen and (max-width: 320px) {
+  #gallery {
+      padding: 20px 5%; /* Adjust padding for small screens */
+      text-align: center;
+  }
 
-@media screen and (max-width: 480px) {
-    #gallery h2 {
-        font-size: 1.5em;
-        margin-bottom: 15px;
+  #gallery h2 {
+      font-size: 1.4em; /* Slightly reduced for better fit */
+      margin-bottom: 12px;
+  }
+
+  #gallery p {
+      font-size: 0.85em; /* Slightly smaller text */
+      margin-bottom: 12px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .gallery-grid {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      height: 260px; /* Slightly reduced height */
+      width: 100%;
+  }
+
+  .gallery-grid img {
+      position: absolute;
+      top: 50%;
+      left: 100%; /* Start completely off-screen */
+      transform: translate(-50%, -50%);
+      width: 85%; /* Adjusted width for better visibility */
+      max-width: 300px; /* Prevents oversized images */
+      height: auto;
+      opacity: 0;
+      animation: slideImages 6s linear infinite;
+  }
+
+  /* Smoother Sliding Animation */
+  @keyframes slideImages {
+      0% {
+          left: 110%; /* Start slightly off-screen */
+          opacity: 0;
+      }
+      15% {
+          left: 50%; /* Move to center */
+          opacity: 1;
+      }
+      50% {
+          left: 50%; /* Stay in center */
+          opacity: 1;
+      }
+      85% {
+          left: -10%; /* Move slightly left before disappearing */
+          opacity: 0;
+      }
+      100% {
+          left: -100%; /* Fully move off-screen */
+          opacity: 0;
+      }
+  }
+}
+
+ /* ############################################################ */
+ @media screen and (min-width: 321px) and (max-width: 480px) {
+  #gallery h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+#gallery p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.gallery-grid {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Needed for absolute positioning of images */
+    overflow: hidden; /* Hide overflowing content */
+    height: 250px; /* Adjust to your preference */
+    width: 100%;
+}
+
+.gallery-grid img {
+    position: absolute;
+    top: 50%;
+    left: 100%; /* Start completely off-screen (right side) */
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 350px; /* Prevents too large images */
+    height: auto;
+    opacity: 0; /* Hide before animation starts */
+    animation: slideImages 6s linear infinite;
+}
+
+/* Sliding Animation */
+@keyframes slideImages {
+    0% {
+        left: 100%; /* Start off-screen (right) */
+        opacity: 0;
     }
-
-    #gallery p {
-        font-size: 0.9em;
-        margin-bottom: 15px;
+    10% {
+        left: 50%; /* Move to center */
+        opacity: 1;
     }
-
-    .gallery-grid {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative; /* Needed for absolute positioning of images */
-        overflow: hidden; /* Hide overflowing content */
-        height: 250px; /* Adjust to your preference */
-        width: 100%;
+    50% {
+        left: 50%; /* Stay in center for a while */
+        opacity: 1;
     }
-
-    .gallery-grid img {
-        position: absolute;
-        top: 50%;
-        left: 100%; /* Start completely off-screen (right side) */
-        transform: translate(-50%, -50%);
-        width: 90%; /* Adjust width for responsiveness */
-        max-width: 350px; /* Prevents too large images */
-        height: auto;
-        opacity: 0; /* Hide before animation starts */
-        animation: slideImages 6s linear infinite;
+    90% {
+        left: -10%; /* Move slightly left before disappearing */
+        opacity: 0;
     }
-
-    /* Sliding Animation */
-    @keyframes slideImages {
-        0% {
-            left: 100%; /* Start off-screen (right) */
-            opacity: 0;
-        }
-        10% {
-            left: 50%; /* Move to center */
-            opacity: 1;
-        }
-        50% {
-            left: 50%; /* Stay in center for a while */
-            opacity: 1;
-        }
-        90% {
-            left: -10%; /* Move slightly left before disappearing */
-            opacity: 0;
-        }
-        100% {
-            left: -100%; /* Move off-screen (left) */
-            opacity: 0;
-        }
+    100% {
+        left: -100%; /* Move off-screen (left) */
+        opacity: 0;
     }
 }
+ }
 
 /* ############################################################ */
 @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -2370,7 +2689,139 @@ nav ul li a {
 
 /* ############################################################ */
 /* Responsive Design for Small Screens */
-@media (max-width: 480px) { 
+@media (max-width: 320px) { 
+  /* Container: Stack Sections Vertically */
+  #contact {
+    flex-direction: column; /* Stack sections vertically */
+    padding: 20px 10px;
+    gap: 20px; /* Add space between sections */
+    align-items: center; /* Center align items */
+    width: 100%;
+  }
+
+  /* Centered Contact Form */
+  #contact .contact-form {
+    order: 1; /* Ensure the contact form appears first */
+    max-width: 100%; /* Keep the form narrow for small screens */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Center-align all form content */
+  }
+
+  #contact .contact-form h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #222;
+  }
+
+  #contact .contact-form label {
+    font-size: 12px;
+    color: #444;
+    text-align: left;
+    display: block; /* Ensure labels align with inputs */
+    margin-bottom: 5px;
+  }
+
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    font-size: 12px;
+    width: 80%; /* Full width inside the form */
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px; /* Add spacing between fields */
+    background-color: #f9f9f9;
+  }
+
+  #contact .contact-form button {
+    font-size: 14px;
+    padding: 12px 0;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #ffffff;
+    width: 40%; /* Full width button */
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  #contact .contact-form button:hover {
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    transform: scale(1.05);
+  }
+
+  /* Distinct Left Section */
+  .left-section {
+    order: 2; /* Ensure the left section appears second */
+    max-width: 90%; 
+    /* Center align the left section */
+    padding: 20px;
+    /* background-color: #f3ede7; */
+    border-radius: 15px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    font-family: "DM Sans", serif;
+    text-align: center;
+  }
+
+  .left-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #5a3c30;
+    font-weight: bold;
+  }
+
+  .left-section p {
+    font-size: 14px;
+    color: #5a3c30;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .left-section .address-block {
+    margin-bottom: 15px;
+  }
+
+  .left-section .address-block h3 {
+    font-size: 16px;
+    color: #7d4a3c;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #7d4a3c;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .left-section .social-icons {
+    display: flex;
+    justify-content: center; /* Center align icons */
+    gap: 15px;
+  }
+
+  .left-section .social-icons .icon-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .left-section .social-icons .icon-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .left-section .social-icons img {
+    width: 20px;
+    height: 20px;
+    filter: invert(36%) sepia(22%) saturate(653%) hue-rotate(320deg) brightness(94%) contrast(85%);
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 321px) and (max-width: 480px) {
   /* Container: Stack Sections Vertically */
   #contact {
     flex-direction: column; /* Stack sections vertically */
