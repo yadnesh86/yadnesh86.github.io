@@ -35,15 +35,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Gallery Section 
 
-// Select all images in the gallery
 const galleryImages = document.querySelectorAll('.gallery-grid img');
 
-// Create a lightbox element
+// Create a lightbox container
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
-
-// Add CSS styles for the lightbox
 lightbox.style.position = 'fixed';
 lightbox.style.top = '0';
 lightbox.style.left = '0';
@@ -54,26 +50,49 @@ lightbox.style.display = 'none';
 lightbox.style.justifyContent = 'center';
 lightbox.style.alignItems = 'center';
 lightbox.style.zIndex = '1000';
+document.body.appendChild(lightbox);
 
-// Add click event to images to open the lightbox
+// Create an image element for the lightbox
+const lightboxImg = document.createElement('img');
+lightboxImg.style.maxWidth = '90%';
+lightboxImg.style.maxHeight = '90%';
+lightbox.appendChild(lightboxImg);
+
+// Create a cancel button
+const cancelButton = document.createElement('span');
+cancelButton.innerHTML = '&times;';
+cancelButton.style.position = 'absolute';
+cancelButton.style.top = '20px';
+cancelButton.style.right = '30px';
+cancelButton.style.fontSize = '2em';
+cancelButton.style.color = 'white';
+cancelButton.style.cursor = 'pointer';
+cancelButton.style.display = 'none'; // Initially hidden
+lightbox.appendChild(cancelButton);
+
+// Function to open the lightbox
+function openLightbox(img) {
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+    cancelButton.style.display = 'block'; // Show cancel button
+}
+
+// Function to close the lightbox
+function closeLightbox(event) {
+    if (!event || event.target === lightbox || event.target === cancelButton) {
+        lightbox.style.display = 'none';
+        cancelButton.style.display = 'none'; // Hide cancel button
+    }
+}
+
+// Add event listeners to images
 galleryImages.forEach(image => {
-    image.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        const img = document.createElement('img');
-        img.src = image.src;
-        img.style.maxWidth = '90%';
-        img.style.maxHeight = '90%';
-        lightbox.innerHTML = ''; // Clear previous content
-        lightbox.appendChild(img);
-    });
+    image.addEventListener('click', () => openLightbox(image));
 });
 
-// Close the lightbox when clicking outside the image
-lightbox.addEventListener('click', (e) => {
-    if (e.target !== e.currentTarget) return; // Ensure only clicking on the background closes it
-    lightbox.style.display = 'none';
-});
-
+// Add event listeners for closing the lightbox
+lightbox.addEventListener('click', closeLightbox);
+cancelButton.addEventListener('click', closeLightbox);
 
 
 // small screen
@@ -97,3 +116,4 @@ lightbox.addEventListener('click', (e) => {
   
 //     autoScroll();
 //   });
+
