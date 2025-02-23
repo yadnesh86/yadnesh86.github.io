@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
+<head>
     <meta charset="UTF-8">
     <meta name="description" content="Free Web tutorials"> 
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -35,11 +35,11 @@
      <main>
         <!-- Home section of the page -->
         <section id="home" class="home-section">
-            <h1 class="home-heading">Welcome to Arch&Props</h1>
-            <p class="home-paragraph">
+            <h1 class="home-heading" id="home-head">Welcome to Arch&Props</h1>
+            <p class="home-paragraph" id="home-para">
                 At Arch&Props, we specialize in transforming your events into memorable experiences. Whether it's a wedding, birthday party, or corporate event, our expert team provides creative decorations and props to match every occasion. Let us make your event as unique as your vision!
             </p>
-            <a href="#" class="call-button">
+            <a href="#" class="call-button" id="home-button">
                 Call Us Now
             </a>
         </section>
@@ -115,21 +115,27 @@
         
         <!-- Gallery section of the page  -->
         <section id="gallery">
-            <h2>Gallery</h2>
-            <p>Explore our portfolio of stunning designs and exceptional props.</p>
-            <div class="gallery-grid auto-scroll">
-                <div class="gallery-grid-above">
-                <img src="./practice_images/about4 image.jpg" alt="Event 1" class="gallery-big-img">
-                <img src="./practice_images/about4 image.jpg" alt="Event 2" class="gallery-small-img">
-                <img src="./practice_images/about4 image.jpg" alt="Event 3" class="gallery-small-img">
-            </div>
-             <div class="gallery-grid-below"> 
-                <img src="./practice_images/about4 image.jpg" alt="Event 4" class="gallery-small-img">
-                <img src="./practice_images/about4 image.jpg" alt="Event 5" class="gallery-small-img">
-                <img src="./practice_images/about4 image.jpg" alt="Event 6" class="gallery-big-img">
-                </div>
-            </div>
-        </section>
+          <h2>Gallery</h2>
+          <p>Explore our portfolio of stunning designs and exceptional props.</p>
+          <div class="gallery-grid">
+              <div class="gallery-grid-above">
+                  <img src="./practice_images/about4 image.jpg" alt="Event 1" class="gallery-big-img" onclick="openLightbox(this)">
+                  <img src="./practice_images/about4 image.jpg" alt="Event 2" class="gallery-small-img" onclick="openLightbox(this)">
+                  <img src="./practice_images/about4 image.jpg" alt="Event 3" class="gallery-small-img" onclick="openLightbox(this)">
+              </div>
+              <div class="gallery-grid-below">
+                  <img src="./practice_images/about4 image.jpg" alt="Event 4" class="gallery-small-img" onclick="openLightbox(this)">
+                  <img src="./practice_images/about4 image.jpg" alt="Event 5" class="gallery-small-img" onclick="openLightbox(this)">
+                  <img src="./practice_images/about4 image.jpg" alt="Event 6" class="gallery-big-img" onclick="openLightbox(this)">
+              </div>
+          </div>
+      </section>
+      
+      <!-- Lightbox -->
+      <div id="lightbox"  class="hidden" onclick="closeLightbox()">
+          <span id="cancel-btn" class="cancelBtn" onclick="closeLightbox(event)">&times;</span>
+          <img id="lightbox-img" src="" alt="Expanded Image">
+      </div>
         
         
 
