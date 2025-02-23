@@ -502,7 +502,7 @@ nav ul li a {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #e8dad1;
-  height: 80vh;
+  min-height: 80vh;
   width: 100%; /* Ensures the section takes full width */
   color: #333333;
   font-family: "DM Sans", serif; 
@@ -572,7 +572,7 @@ nav ul li a {
   /* Home section adjustments */
   .home-section {
       padding: 30px 10px; /* Adds side padding for better spacing */
-      height: 75vh; /* Slightly increased height for content fit */
+      min-height: 75vh; /* Slightly increased height for content fit */
       margin: 0 auto; /* Ensures proper centering */
       display: flex;
       flex-direction: column;
@@ -613,7 +613,7 @@ nav ul li a {
   /* Home section adjustments */
 .home-section {
   padding: 40px auto;
-  height: 70vh; /* Adjusts height for better content fit */
+  min-height: 75vh; /* Adjusts height for better content fit */
   margin: 0;
 }
 
@@ -648,7 +648,7 @@ nav ul li a {
   /* Home section adjustments */
   .home-section {
     padding: 45px auto;
-    height: 70vh; /* Slightly increased height for better content fit */
+    min-height: 75vh; /* Slightly increased height for better content fit */
     margin: 0;
   }
 
@@ -685,7 +685,7 @@ nav ul li a {
 /* Home section adjustments */
 .home-section {
   padding: 50px auto; /* Increased padding for better spacing */
-  height: 70vh; /* Slightly increased height for better content fit */
+  min-height: 75vh; /* Slightly increased height for better content fit */
   display: flex;
   flex-direction: column;
   align-items: center;  /* Centers all child elements */
@@ -721,7 +721,7 @@ nav ul li a {
 /* ############################################################ */
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
 .home-section {
-    height: 75vh; /* Slightly reduced height */
+    min-height: 75vh; /* Slightly reduced height */
     padding: 60px 20px;
 }
 
@@ -753,7 +753,7 @@ nav ul li a {
 .home-section {
   /* Slightly reduce vertical padding for a more balanced look */
   padding: 60px 20px;
-  height: 85vh;
+  min-height: 85vh;
 }
 
 .home-heading {
@@ -782,7 +782,7 @@ nav ul li a {
 .home-section {
   /* Increase vertical padding and height for a more spacious layout */
   padding: 80px 40px;
-  height: 90vh;
+  min-height: 90vh;
 }
 
 .home-heading {
@@ -811,7 +811,7 @@ nav ul li a {
 .home-section {
   /* Increase padding and height for a more spacious feel */
   padding: 100px 60px;
-  height: 95vh;
+  min-height: 95vh;
   max-width: auto;
 }
 
@@ -853,7 +853,7 @@ nav ul li a {
   font-family: "DM Sans", serif;
   color: #333;
   background-color: #f9f9f9;
-  height: 70vh;
+  min-height: 70vh;
   width: auto;
 }
 
@@ -1321,7 +1321,7 @@ nav ul li a {
   .about-section {
       padding: 6rem 4rem; /* Reduced padding */
       gap: 30px; /* Reduced gap for better balance */
-      height: auto; /* Allow flexibility */
+      min-height: 85vh; /* Allow flexibility */
   }
 
   /* Left Section */
@@ -1370,7 +1370,7 @@ nav ul li a {
     padding: 6rem 4rem;
     gap: 30px;
     /* Optionally adjust the height if needed */
-    height: 90vh;
+    min-height: 90vh;
   }
 
   .about-left {
@@ -1409,7 +1409,7 @@ nav ul li a {
     /* Increase overall padding and gap for a more expansive layout */
     padding: 10rem 8rem;
     gap: 50px;
-    height: 90vh;
+    min-height: 90vh;
   }
   
   .about-left {
@@ -1453,7 +1453,7 @@ nav ul li a {
     /* Further increase overall padding and gap for a very spacious layout */
     padding: 10rem 10rem;
     gap: 60px;
-    height: 95vh;
+    min-height: 95vh;
   }
   
   .about-left {
