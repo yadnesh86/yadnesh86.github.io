@@ -2104,7 +2104,6 @@ nav ul li a {
   }
 
   .gallery-grid {
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2112,6 +2111,8 @@ nav ul li a {
       overflow: hidden;
       height: 260px; /* Slightly reduced height */
       width: 100%;
+      max-width: 280px; /* Ensures proper centering */
+      margin: 0 auto;
   }
 
   .gallery-grid img {
@@ -2164,7 +2165,6 @@ nav ul li a {
 }
 
 .gallery-grid {
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2172,6 +2172,8 @@ nav ul li a {
     overflow: hidden; /* Hide overflowing content */
     height: 250px; /* Adjust to your preference */
     width: 100%;
+    max-width: 400px; /* Ensures proper centering */
+    margin: 0 auto;
 }
 
 .gallery-grid img {
@@ -2224,7 +2226,6 @@ nav ul li a {
     }
 
     .gallery-grid {
-        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2232,6 +2233,8 @@ nav ul li a {
         overflow: hidden;
         height: 320px; /* Increased height for better spacing */
         width: 100%;
+        max-width: 600px; /* Ensures proper centering */
+        margin: 0 auto;
     }
 
     .gallery-grid img {
