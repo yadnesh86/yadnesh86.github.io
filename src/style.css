@@ -5,7 +5,7 @@
 }
 
 
-/* ############################################################################################################# */
+/* ############################################################################################################ */
 /* Header section */
 /* Base styles for the header */
 header {
@@ -80,6 +80,7 @@ nav ul li a:hover {
   border: none;
 }
 
+/* ############################################################ */
 /* Responsive styles for small screens */
 @media screen and (max-width: 480px) {
   /* Header adjusts for smaller screens */
@@ -145,123 +146,584 @@ nav ul li a:hover {
   }
 }
 
+
+
 /* Hide close button on large screens */
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 1023px) {
   .close-btn {
       display: none;
   }
 }
 
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  /* Header adjusts for smaller screens */
+  header {
+    padding: 12px 25px;
+  }
+
+  /* Hamburger button visible on small screens */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide navigation by default */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Fully hide the nav off-screen */
+    height: 100%;
+    width: 92%; /* Adjusted width for a better layout */
+    background-color: #e8dad1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  /* Navigation menu open state */
+  nav.open {
+    right: 0; /* Slide in */
+  }
+
+  /* Close button inside the navigation bar */
+  .close-btn {
+    display: block; /* Visible only on small screens */
+    align-self: flex-end;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #8d675a;
+    background: none;
+    border: none;
+    margin-bottom: 25px;
+    margin-right: 10%;
+  }
+
+  /* Navigation list as a column */
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  /* Navigation items with spacing */
+  nav ul li {
+    margin: 15px 10px;
+  }
+
+  /* Navigation links font size adjusts */
+  nav ul li a {
+    font-size: 20px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* Header adjusts for smaller screens */
+header {
+  padding: 15px 30px;
+}
+
+/* Hamburger button visible on small screens */
+.hamburger {
+  display: block;
+}
+
+/* Hide navigation by default */
+nav {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Fully hide the nav off-screen */
+  height: 100%;
+  width: 92%; /* Adjusted width for a better layout */
+  background-color: #e8dad1;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+/* Navigation menu open state */
+nav.open {
+  right: 0; /* Slide in */
+}
+
+/* Close button inside the navigation bar */
+.close-btn {
+  display: block; /* Visible only on small screens */
+  align-self: flex-end;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #8d675a;
+  background: none;
+  border: none;
+  margin-bottom: 25px;
+  margin-right: 10%;
+}
+
+/* Navigation list as a column */
+nav ul {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+/* Navigation items with spacing */
+nav ul li {
+  margin: 15px 10px;
+}
+
+/* Navigation links font size adjusts */
+nav ul li a {
+  font-size: 24px;
+}
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #e8dad1;
+    position: relative;
+  }
+  
+  /* Logo inside the header */
+  header img {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Navigation menu (default for large screens) */
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation items */
+  nav ul li {
+    margin-left: 25px;
+  }
+  
+  /* Navigation links */
+  nav ul li a {
+    font-size: 22px;
+    font-family: "DM Sans", serif;
+    font-weight: 300;
+    text-decoration: none;
+    color: #8d675a;
+    padding: 6px 12px;
+    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  /* Decorative underline for links */
+  nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #8d675a;
+    transition: width 0.3s ease;
+  }
+  
+  /* Hover effects */
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  nav ul li a:hover {
+    color: #8d675a;
+  }
+  
+  /* Hamburger button (hidden by default) */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 32px;
+    color: #8d675a;
+    background: none;
+    border: none;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+  /* Reduce header side padding for a more compact layout */
+  header {
+    padding: 10px 30px;
+  }
+
+  /* Adjust navigation item spacing */
+  nav ul li {
+    margin-left: 15px;
+  }
+
+  /* Slightly reduce font size for nav links */
+  nav ul li a {
+    font-size: 22px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+  header {
+    padding: 20px 100px;
+  }
+  header img {
+    height: 70px;
+  }
+  nav ul li a {
+    font-size: 24px;
+    padding: 8px 12px;
+  }
+  nav ul li {
+    margin-left: 25px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1901px) {
+  header {
+    /* Increase padding for an even more spacious header */
+    padding: 30px 120px;
+    max-width: auto;
+  }
+  header img {
+    /* Increase logo size */
+    height: 90px;
+  }
+  nav ul li a {
+    /* Increase font size and padding for nav links */
+    font-size: 28px;
+    padding: 10px 16px;
+  }
+  nav ul li {
+    /* Increase spacing between nav items */
+    margin-left: 30px;
+  }
+}
 
 
 
 
-/* ############################################################################################################# */
+
+
+
+/* ############################################################################################################ */
 /* Home section of the page  */
 /* Main section styling for background and layout */
 .home-section {
-    position: relative; /* Ensures pseudo-element is positioned correctly */
-    background-image: url('../images/arch4.jpg');
-    background-size: contain; /* Changed to cover for full coverage of the section */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #e8dad1;
-    height: 80vh;
-    width: 100%; /* Ensures the section takes full width */
-    color: #333333;
-    font-family: "DM Sans", serif; 
-    padding: 80px 20px;
+  position: relative; /* Ensures pseudo-element is positioned correctly */
+  background-image: url('../../images/arch4.jpg');
+  background-size: contain; /* Changed to cover for full coverage of the section */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e8dad1;
+  height: 80vh;
+  width: 100%; /* Ensures the section takes full width */
+  color: #333333;
+  font-family: "DM Sans", serif; 
+  padding: 80px 20px;
 }
 
 /* Pseudo-element to apply the blur effect */
 .home-section::before {
-    background-size: contain; /* Changed to cover for full coverage of the section */
-    background-position: center;
-    background-repeat: no-repeat;
-    content: ''; /* Creates an empty pseudo-element */
-    position: absolute; /* Positions the pseudo-element over the section */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: inherit; /* Inherits the background image from the parent */
-    filter: blur(8px); /* Applies the blur effect */
-    z-index: 1; /* Ensures the pseudo-element stays behind the content */
+  background-size: contain; /* Changed to cover for full coverage of the section */
+  background-position: center;
+  background-repeat: no-repeat;
+  content: ''; /* Creates an empty pseudo-element */
+  position: absolute; /* Positions the pseudo-element over the section */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit; /* Inherits the background image from the parent */
+  filter: blur(8px); /* Applies the blur effect */
+  z-index: 1; /* Ensures the pseudo-element stays behind the content */
 }
 
 /* Heading style - used for the main title on the section */
 .home-heading {
-    font-size: 3rem;
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    margin : 80px 0px 40px 90px;
-    text-align: left;
-    position: relative;
-    z-index: 1; /* Makes sure heading stays above the background */
+  font-size: 3rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin : 80px 0px 40px 90px;
+  text-align: left;
+  position: relative;
+  z-index: 1; /* Makes sure heading stays above the background */
 }
 
 /* Paragraph styling for the description text */
 .home-paragraph {
-    font-size: 1rem;
-    max-width: 800px;
-    margin-left: 90px;
-    text-align: left;
-    line-height: 1.8;
-    position: relative;
-    z-index: 1; /* Makes sure paragraph stays above the background */
+  font-size: 1rem;
+  max-width: 800px;
+  margin-left: 90px;
+  text-align: left;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1; /* Makes sure paragraph stays above the background */
 }
 
 /* Styling for the "Call Us Now" button */
 .call-button {
-    display: inline-block;
-    background-color: #8d675a;
-    color: white;
-    font-size: 1rem;
-    padding: 15px 30px;
-    margin: 50px 0px 0px 90px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    position: relative;
-    z-index: 1; /* Ensures the button stays above the background */
+  display: inline-block;
+  background-color: #8d675a;
+  color: white;
+  font-size: 1rem;
+  padding: 15px 30px;
+  margin: 50px 0px 0px 90px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 1; /* Ensures the button stays above the background */
 }
 
 /* Hover effect for the call button, changes color on mouseover */
 .call-button:hover {
-    background-color: #705440;
+  background-color: #705440;
 }
 
+/* ############################################################ */
 @media screen and (max-width: 480px) {
+/* Home section adjustments */
+.home-section {
+    padding: 40px auto;
+    height: 70vh; /* Adjusts height for better content fit */
+    margin: 0;
+}
+
+/* Heading adjustments */
+.home-heading {
+    font-size: 2rem; /* Reduces font size for smaller screens */
+    margin: 40px 0 20px 0px; /* Adjusts spacing for smaller screens */
+    text-align: center; /* Centers the heading for better alignment */
+}
+
+/* Paragraph adjustments */
+.home-paragraph {
+    font-size: 0.9rem; /* Slightly smaller font for mobile readability */
+    max-width: 90%;      /* Restricts the paragraph width */
+    margin: 0 auto;      /* Centers the paragraph in its container */
+    text-align: center; /* Centers the text for smaller screens */
+    line-height: 1.4; /* Adjusts line height for compact spacing */
+}
+
+/* Call button adjustments */
+.call-button {
+    font-size: 0.9rem; /* Reduces font size for smaller buttons */
+    padding: 10px auto; /* Adjusts padding for smaller buttons */
+    margin: 30px auto 0 auto; /* Centers the button */
+    display: block; /* Makes the button occupy its own line */
+    width: fit-content; /* Ensures button width wraps its content */
+}
+}
+
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
   /* Home section adjustments */
   .home-section {
-      padding: 40px 2%;
-      height: 70vh; /* Adjusts height for better content fit */
+    padding: 45px auto;
+    height: 70vh; /* Slightly increased height for better content fit */
+    margin: 0;
   }
 
   /* Heading adjustments */
   .home-heading {
-      font-size: 2rem; /* Reduces font size for smaller screens */
-      margin: 40px 0 20px 20px; /* Adjusts spacing for smaller screens */
-      text-align: center; /* Centers the heading for better alignment */
+    font-size: 1.9rem; /* Adjusted font size for improved scaling */
+    margin: 35px 0 15px 0px; /* Modified spacing for better alignment */
+    text-align: center;
   }
 
   /* Paragraph adjustments */
   .home-paragraph {
-      font-size: 0.9rem; /* Slightly smaller font for mobile readability */
-      margin-left: 20px;
-      margin-right: 20px; /* Adds spacing on both sides for better fit */
-      text-align: center; /* Centers the text for smaller screens */
-      line-height: 1.4; /* Adjusts line height for compact spacing */
-  }
+      font-size: 1rem;
+      max-width: 90%;      /* Restricts the paragraph width */
+      margin: 0 auto;      /* Centers the paragraph in its container */
+      text-align: center;
+      line-height: 1.5;
+    }
 
   /* Call button adjustments */
   .call-button {
-      font-size: 0.9rem; /* Reduces font size for smaller buttons */
-      padding: 10px 20px; /* Adjusts padding for smaller buttons */
-      margin: 30px auto 0 auto; /* Centers the button */
-      display: block; /* Makes the button occupy its own line */
-      width: fit-content; /* Ensures button width wraps its content */
+    font-size: 1rem; /* Adjusted font size for consistency */
+    padding: 12px auto; /* Increased padding for a more comfortable tap target */
+    margin: 35px auto 0 auto; /* Modified margin to better center the button */
+    display: block;
+    width: fit-content;
   }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+/* Home section adjustments */
+.home-section {
+  padding: 50px auto; /* Increased padding for better spacing */
+  height: 70vh; /* Slightly increased height for better content fit */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centers all child elements */
+  text-align: center;
+}
+
+/* Heading adjustments */
+.home-heading {
+  font-size: 2.2rem; /* Slightly larger font for better visibility */
+  margin: 30px 0 20px 0; /* Centered spacing for better balance */
+  text-align: center;
+}
+
+/* Paragraph adjustments */
+.home-paragraph {
+  font-size: 1.1rem; /* Slightly larger font for improved readability */
+  max-width: 85%; /* Adjusted width for better balance */
+  margin: 0; /* Center the text */
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Call button adjustments */
+.call-button {
+  font-size: 1.1rem; /* Slightly larger font for consistency */
+  padding: 14px auto; /* More padding for better tap target */
+  margin: 40px auto 0 auto; /* Centered button with more spacing */
+  display: block;
+  width: fit-content;
+}
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+.home-section {
+    height: 75vh; /* Slightly reduced height */
+    padding: 60px 20px;
+}
+
+.home-section::before {
+    filter: blur(6px); /* Reduced blur effect for clarity */
+}
+
+.home-heading {
+    font-size: 2.5rem; /* Reduced size for better fit */
+    margin: 60px 0px 30px 70px;
+}
+
+.home-paragraph {
+    font-size: 0.95rem; /* Slightly smaller font */
+    max-width: 700px;
+    margin-left: 70px;
+    line-height: 1.7;
+}
+
+.call-button {
+    font-size: 0.95rem; /* Adjusted button text size */
+    padding: 12px 25px;
+    margin: 40px 0px 0px 70px;
+}
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+.home-section {
+  /* Slightly reduce vertical padding for a more balanced look */
+  padding: 60px 20px;
+  height: 85vh;
+}
+
+.home-heading {
+  /* Scale down the heading size and adjust margins */
+  font-size: 2.8rem;
+  margin: 60px 0 30px 70px;
+}
+
+.home-paragraph {
+  /* Adjust the paragraph text size, max-width, and left margin */
+  font-size: 1rem;
+  max-width: 700px;
+  margin-left: 70px;
+}
+
+.call-button {
+  /* Scale down the button and adjust padding/margins */
+  font-size: 1rem;
+  padding: 12px 25px;
+  margin: 40px 0 0 70px;
+}
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+.home-section {
+  /* Increase vertical padding and height for a more spacious layout */
+  padding: 80px 40px;
+  height: 90vh;
+}
+
+.home-heading {
+  /* Increase the heading size and adjust margins */
+  font-size: 3.5rem;
+  margin: 80px 0 40px 90px;
+}
+
+.home-paragraph {
+  /* Increase the paragraph text size and max-width, with larger left margin */
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin-left: 90px;
+}
+
+.call-button {
+  /* Increase the button size and adjust padding/margins */
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  margin: 50px 0 0 90px;
+}
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1901px) {
+.home-section {
+  /* Increase padding and height for a more spacious feel */
+  padding: 100px 60px;
+  height: 95vh;
+  max-width: auto;
+}
+
+.home-heading {
+  /* Further increase the heading size and adjust margins */
+  font-size: 4.5rem;
+  margin: 100px 0 50px 120px;
+}
+
+.home-paragraph {
+  /* Increase paragraph font size, max-width, and left margin */
+  font-size: 1.4rem;
+  max-width: 1100px;
+  margin-left: 120px;
+}
+
+.call-button {
+  /* Upscale the button’s text and spacing */
+  font-size: 1.4rem;
+  padding: 18px 36px;
+  margin: 60px 0 0 120px;
+}
 }
 
 
@@ -270,105 +732,196 @@ nav ul li a:hover {
 
 
 
-/* ############################################################################################################# */
+/* #############################################################################################################*/
 /* About Section Styles */
 .about-section {
-    display: flex;
-    align-items: flex-start;
-    margin: 0px auto;
-    padding: 8rem 6rem;
-    gap: 40px;
-    font-family: "DM Sans", serif;
-    color: #333;
-    background-color: #f9f9f9;
-    height: 70vh;
-    width: auto;
+  display: flex;
+  align-items: flex-start;
+  margin: 0px auto;
+  padding: 8rem 6rem;
+  gap: 40px;
+  font-family: "DM Sans", serif;
+  color: #333;
+  background-color: #f9f9f9;
+  height: 70vh;
+  width: auto;
 }
 
 /* Left Section Styles */
 .about-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .image-box {
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .image-box img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .image-column .image-box + .image-box {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* Right Section Styles */
 .about-right {
-    flex: 1;
-    padding-right: 20px;
-    margin-top: 20px;
+  flex: 1;
+  padding-right: 20px;
+  margin-top: 20px;
 }
 
 .about-highlight {
-    color: #e91e63;
-    font-size: 1.4rem;
-    font-weight: bold;
+  color: #e91e63;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 45px;
+  text-align: justify;
+}
+
+.learn-more-btn {
+  background-color: #e91e63;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #c2185b;
+}
+
+/* ############################################################ */
+@media screen and (max-width: 480px) {
+/* About Section: Flex column layout for small screens */
+.about-section {
+    flex-direction: column; /* Stack images and text vertically */
+    padding: 3rem 1.5rem;
+    gap: 20px;
+    height: auto;
+    background-color: #f9f9f9;
+}
+
+/* Left Section: Centered image layout */
+.about-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 images per row */
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.image-box {
+    width: 100%; /* Ensure images take full width of the grid item */
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover effect for images */
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+/* Right Section: Text and Button Adjustments */
+.about-right {
+    text-align: center;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.about-highlight {
+    color: #ff5722;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .about-title {
-    font-size: 2.5rem;
-    font-family: 'Georgia', serif;
-    margin-bottom: 40px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .about-text {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 45px;
-    text-align: justify;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .learn-more-btn {
-    background-color: #e91e63;
+    background: linear-gradient(90deg, #ff5722, #e91e63);
     color: white;
     font-size: 1rem;
-    font-weight: bold;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    width: 40%;
 }
 
 .learn-more-btn:hover {
-    background-color: #c2185b;
+    transform: scale(1.05);
+    background-color: #d81b60;
+}
 }
 
-
-@media screen and (max-width: 480px) {
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
   /* About Section: Flex column layout for small screens */
   .about-section {
       flex-direction: column; /* Stack images and text vertically */
-      padding: 3rem 1.5rem;
-      gap: 20px;
+      padding: 3.2rem 1.8rem;
+      gap: 25px;
       height: auto;
       background-color: #f9f9f9;
   }
@@ -385,8 +938,8 @@ nav ul li a:hover {
   .image-grid {
       display: grid;
       grid-template-columns: 1fr 1fr; /* 2 images per row */
-      gap: 15px;
-      margin-top: 20px;
+      gap: 20px;
+      margin-top: 25px;
       width: 100%;
   }
 
@@ -405,6 +958,10 @@ nav ul li a:hover {
       object-fit: cover;
   }
 
+  .image-column .image-box + .image-box {
+      margin-top: 20px;
+  }
+
   /* Hover effect for images */
   .image-box:hover {
       transform: scale(1.05);
@@ -414,7 +971,7 @@ nav ul li a:hover {
   .about-right {
       text-align: center;
       padding: 0;
-      margin-top: 30px;
+      margin-top: 25px;
   }
 
   .about-highlight {
@@ -424,27 +981,27 @@ nav ul li a:hover {
   }
 
   .about-title {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
   }
 
   .about-text {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #666;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
   }
 
   .learn-more-btn {
       background: linear-gradient(90deg, #ff5722, #e91e63);
       color: white;
       font-size: 1rem;
-      padding: 12px;
+      padding: 14px;
       border-radius: 50px;
       cursor: pointer;
       transition: transform 0.2s ease, background-color 0.3s ease;
-      width: 40%;
+      width: 30%;
   }
 
   .learn-more-btn:hover {
@@ -453,6 +1010,280 @@ nav ul li a:hover {
   }
 }
 
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* About Section: Stack content vertically, improve spacing */
+  .about-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centers content horizontally */
+      text-align: center;
+      padding: 3rem 2rem;
+      gap: 30px;
+      height: auto;
+      background-color: #f9f9f9;
+  }
+
+  /* Left Section: Centered image grid */
+  .about-left {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  /* Image Grid Layout */
+  .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic layout */
+      gap: 15px;
+      width: 100%;
+      max-width: 700px; /* Restricts max width */
+      margin-top: 20px;
+  }
+
+  .image-box {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+  }
+
+  .image-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+  }
+
+  .image-box:hover {
+      transform: scale(1.05);
+  }
+
+  /* Right Section: Text Centering & Spacing */
+  .about-right {
+      text-align: center;
+      padding: 0 1.5rem;
+      margin-top: 20px;
+      max-width: 700px;
+  }
+
+  .about-highlight {
+      color: #ff5722;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      font-weight: bold;
+  }
+
+  .about-title {
+      font-size: 2rem; /* Slightly larger for better readability */
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #333;
+  }
+
+  .about-text {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 50px;
+  }
+
+  /* Learn More Button */
+  .learn-more-btn {
+      background: linear-gradient(90deg, #ff5722, #e91e63);
+      color: white;
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      width: 40%; /* More flexible width */
+      min-width: 180px;
+      max-width: 250px;
+      margin: 0 auto;
+      display: block;
+  }
+
+  .learn-more-btn:hover {
+      transform: scale(1.05);
+      background-color: #d81b60;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .about-section {
+      padding: 6rem 4rem; /* Reduced padding */
+      gap: 30px; /* Reduced gap for better balance */
+      height: auto; /* Allow flexibility */
+  }
+
+  /* Left Section */
+  .about-left {
+      padding-left: 5px;
+  }
+
+  .image-grid {
+      gap: 8px; /* Slightly reduced gap */
+  }
+
+  .image-box {
+      padding: 8px;
+  }
+
+  /* Right Section */
+  .about-right {
+      padding-right: 10px;
+      margin-top: 15px;
+  }
+
+  .about-highlight {
+      font-size: 1.3rem; /* Slightly smaller font */
+  }
+
+  .about-title {
+      font-size: 2.2rem; /* Adjusted for better fit */
+      margin-bottom: 30px;
+  }
+
+  .about-text {
+      font-size: 0.95rem; /* Slightly reduced for readability */
+      margin-bottom: 35px;
+  }
+
+  .learn-more-btn {
+      font-size: 0.95rem; /* Adjusted button text size */
+      padding: 12px 18px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+  .about-section {
+    /* Reduce overall padding and gap for a more compact layout */
+    padding: 6rem 4rem;
+    gap: 30px;
+    /* Optionally adjust the height if needed */
+    height: 90vh;
+  }
+
+  .about-left {
+    padding-left: 5px;
+  }
+
+  .about-right {
+    /* Slightly reduce right padding and top margin */
+    padding-right: 10px;
+    margin-top: 10px;
+  }
+
+  .about-highlight {
+    font-size: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    margin-bottom: 35px;
+  }
+
+  .learn-more-btn {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+  .about-section {
+    /* Increase overall padding and gap for a more expansive layout */
+    padding: 10rem 8rem;
+    gap: 50px;
+    height: 90vh;
+  }
+  
+  .about-left {
+    /* Increase left padding for more breathing room */
+    padding-left: 15px;
+  }
+  
+  .about-right {
+    /* Increase right padding and top margin */
+    padding-right: 25px;
+    margin-top: 25px;
+  }
+  
+  .about-highlight {
+    /* Upscale the highlight text */
+    font-size: 2rem;
+  }
+  
+  .about-title {
+    /* Increase title font size and bottom margin */
+    font-size: 3rem;
+    margin-bottom: 50px;
+  }
+  
+  .about-text {
+    /* Increase body text size and spacing */
+    font-size: 1.3rem;
+    margin-bottom: 55px;
+  }
+  
+  .learn-more-btn {
+    /* Upscale the button for larger screens */
+    font-size: 1.3rem;
+    padding: 16px 28px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1901px) {
+  .about-section {
+    /* Further increase overall padding and gap for a very spacious layout */
+    padding: 10rem 10rem;
+    gap: 60px;
+    height: 95vh;
+  }
+  
+  .about-left {
+    /* Increase left padding for more generous whitespace */
+    padding-left: 25px;
+  }
+  
+  .about-right {
+    /* Increase right padding and top margin */
+    padding-right: 35px;
+    margin-top: 30px;
+  }
+  
+  .about-highlight {
+    /* Upscale the highlight text further */
+    font-size: 2.5rem;
+  }
+  
+  .about-title {
+    /* Increase title font size and bottom margin */
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+  }
+  
+  .about-text {
+    /* Increase body text size and spacing */
+    font-size: 1.4rem;
+    margin-bottom: 65px;
+  }
+  
+  .learn-more-btn {
+    /* Increase button text size and padding for larger screens */
+    font-size: 1.4rem;
+    padding: 18px 32px;
+  }
+}
 
 
 
@@ -530,6 +1361,7 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 
+ /* ############################################################ */
   @media screen and (max-width: 480px) {
     #services {
       padding: 30px 4%; /* Adjust padding for small screens */
@@ -568,14 +1400,312 @@ nav ul li a:hover {
     }
   }
   
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  #services {
+    padding: 35px 10%; /* Increased padding for more breathing room */
+  }
 
+  #services h2 {
+    font-size: 1.7em; /* Slightly larger heading for improved readability */
+    margin-bottom: 18px;
+  }
 
+  #services-paragraph {
+    font-size: 1em; /* Increased text size for clarity */
+    margin-bottom: 35px;
+  }
 
+  /* Grid Layout */
+  .service-grid {
+    grid-template-columns: 1fr; /* Stack grid items in a single column */
+    gap: 25px; /* Increased gap between items for better separation */
+  }
 
+  .service-item {
+    height: 250px; /* Increased height to better accommodate content */
+  }
+
+  .service-content {
+    padding: 18px; /* Increased padding for improved content spacing */
+  }
+
+  .service-content h3 {
+    font-size: 1.4em; /* Slightly larger heading */
+  }
+
+  .service-content-p {
+    font-size: 1em; /* Increased paragraph text size */
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Services Section */
+  #services {
+    background-color: #e8dad1;
+    padding: 50px 5%;
+    font-family: "DM Sans", sans-serif;
+    text-align: center;
+  }
+
+  /* Section Heading */
+  #services h2 {
+    font-size: 2rem;
+    color: #8d675a;
+    margin-bottom: 20px;
+  }
+
+  /* Section Description */
+  #services-paragraph {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 80%;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+  }
+
+  /* Service Grid Layout */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Service Card */
+  .service-item {
+    position: relative;
+    height: 260px; /* Perfect size for tablet view */
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Dark Overlay for Readability */
+  .service-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Darker overlay for contrast */
+    z-index: 1;
+  }
+
+  /* Service Content */
+  .service-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 80%;
+  }
+
+  .service-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .service-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Hover Effect */
+  .service-item:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  #services {
+      padding: 40px 15px; /* Adjusted padding */
+  }
+
+  #services h2 {
+      font-size: 1.8em; /* Slightly reduced */
+  }
+
+  #services-paragraph {
+      font-size: 0.95em; /* Adjusted for better readability */
+      margin-bottom: 30px;
+  }
+
+  /* Grid Layout */
+  .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px; /* Reduced gap for better spacing */
+      padding-bottom: 50px;
+      max-width: 86%;
+  }
+
+  .service-item {
+      height: 260px; /* Reduced height for better proportions */
+      border-radius: 15px;
+  }
+
+  .service-content {
+      padding: 15px;
+  }
+
+  .service-content h3 {
+      font-size: 1.4em; /* Slightly smaller */
+  }
+
+  .service-content-p {
+      font-size: 0.95em; /* Adjusted for readability */
+  }
+
+  .service-item:hover {
+      transform: scale(1.01); /* Reduced hover effect for smoother animation */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+  /* Adjust overall padding for the services container */
+  #services {
+    padding: 40px 20px;
+  }
+
+  /* Scale down the heading size and margin */
+  #services h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  /* Reduce paragraph font size and bottom margin */
+  #services-paragraph {
+    font-size: 1em;
+    margin-bottom: 35px;
+  }
+
+  /* Adjust grid gap and container width */
+  .service-grid {
+    gap: 30px;
+    max-width: 80%;
+  }
+
+  /* Slightly reduce service item height */
+  .service-item {
+    height: 280px;
+  }
+
+  /* Scale down service content text sizes */
+  .service-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+
+  .service-content-p {
+    font-size: 1em;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+  /* Increase overall padding for the services container */
+  #services {
+    padding: 60px 40px;
+  }
   
+  /* Increase heading size and margin */
+  #services h2 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+  }
+  
+  /* Increase paragraph font size and bottom margin */
+  #services-paragraph {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+  }
+  
+  /* Increase grid gap and container width */
+  .service-grid {
+    gap: 40px;
+    max-width: 90%;
+  }
+  
+  /* Increase service item height */
+  .service-item {
+    height: 360px;
+  }
+  
+  /* Upscale service content text sizes */
+  .service-content h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .service-content-p {
+    font-size: 1.2em;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1901px) {
+  /* Increase overall padding for the services container */
+  #services {
+    padding: 80px 60px;
+    max-width: auto;
+  }
+  
+  /* Increase heading size and margin */
+  #services h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+  }
+  
+  /* Increase paragraph font size and bottom margin */
+  #services-paragraph {
+    font-size: 1.5em;
+    margin-bottom: 50px;
+  }
+  
+  /* Increase grid gap and container width */
+  .service-grid {
+    gap: 50px;
+    max-width: 95%;
+  }
+  
+  /* Increase service item height */
+  .service-item {
+    height: 420px;
+  }
+  
+  /* Upscale service content text sizes */
+  .service-content h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+  
+  .service-content-p {
+    font-size: 1.3em;
+  }
+}
+
+
+
+
+
+
+
+ 
   /* ############################################################################################################*/
   /* Gallery Section Styling */
-#gallery {
+  #gallery {
     text-align: center;
     font-family: "DM Sans", serif;
     color: #333;
@@ -598,8 +1728,8 @@ nav ul li a:hover {
 
 .gallery-grid {
     width: 90%;
-    margin: 0px 70px;
-    max-width: 1200px;
+    margin: 0px auto;
+    max-width: 80%;
 }
 
 .gallery-grid-above {
@@ -652,6 +1782,44 @@ nav ul li a:hover {
   animation: zoomIn 0.3s ease-in-out;
 }
 
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#lightbox.hidden { display: none; }
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+.cancelBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+#cancel-btn {
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#lightbox:not(.hidden) #cancel-btn {
+    display: block;
+}
+
 @keyframes zoomIn {
   from {
       transform: scale(0.9);
@@ -663,55 +1831,361 @@ nav ul li a:hover {
   }
 }
 
+
+
 @media screen and (max-width: 480px) {
+    #gallery h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
 
-  #gallery h2 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-  }
+    #gallery p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
 
-  #gallery p {
-      font-size: 0.9em;
-      margin-bottom: 15px;
-  }
+    .gallery-grid {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative; /* Needed for absolute positioning of images */
+        overflow: hidden; /* Hide overflowing content */
+        height: 250px; /* Adjust to your preference */
+        width: 100%;
+    }
 
-  .gallery-grid {
-      display: block; /* Ensure single image layout */
-      position: relative; /* Position for sliding animation */
-      overflow: hidden; /* Hide content outside the container */
-      height: 300px; /* Set a fixed height to ensure visibility */
-      margin-left: 0%; /* Ensure grid stays aligned */
-  }
+    .gallery-grid img {
+        position: absolute;
+        top: 50%;
+        left: 100%; /* Start completely off-screen (right side) */
+        transform: translate(-50%, -50%);
+        width: 90%; /* Adjust width for responsiveness */
+        max-width: 350px; /* Prevents too large images */
+        height: auto;
+        opacity: 0; /* Hide before animation starts */
+        animation: slideImages 6s linear infinite;
+    }
 
-  .gallery-grid img {
-      position: absolute; /* Enable sliding animation */
-      top: 50%; /* Center image vertically */
-      left: -100%; /* Start completely off-screen on the left */
-      transform: translateY(-50%); /* Adjust for vertical centering */
-      width: 100%; /* Ensure image spans the full width of the container */
-      animation: slideFromLeft 5s linear infinite; /* Apply sliding animation */
-  }
-
-  @keyframes slideFromLeft {
-      0% {
-          left: -100%; /* Start completely off-screen on the left */
-      }
-      50% {
-          left: 0%; /* Fully visible, aligned to the left edge of the container */
-      }
-      100% {
-          left: 100%; /* Move completely off-screen to the right */
-      }
-  }
+    /* Sliding Animation */
+    @keyframes slideImages {
+        0% {
+            left: 100%; /* Start off-screen (right) */
+            opacity: 0;
+        }
+        10% {
+            left: 50%; /* Move to center */
+            opacity: 1;
+        }
+        50% {
+            left: 50%; /* Stay in center for a while */
+            opacity: 1;
+        }
+        90% {
+            left: -10%; /* Move slightly left before disappearing */
+            opacity: 0;
+        }
+        100% {
+            left: -100%; /* Move off-screen (left) */
+            opacity: 0;
+        }
+    }
 }
 
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    #gallery h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    #gallery p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        height: 320px; /* Increased height for better spacing */
+        width: 100%;
+    }
+
+    .gallery-grid img {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        width: 80%; /* Adjusted for better fit */
+        max-width: 500px; /* Increased max width for better scaling */
+        height: auto;
+        opacity: 0;
+        animation: slideImages 7s ease-in-out infinite; /* Smooth transition */
+    }
+
+    /* Sliding Animation */
+    @keyframes slideImages {
+        0% {
+            left: 120%; /* Start slightly off-screen for a smoother effect */
+            opacity: 0;
+        }
+        15% {
+            left: 50%;
+            opacity: 1;
+        }
+        50% {
+            left: 50%;
+            opacity: 1;
+        }
+        85% {
+            left: -10%;
+            opacity: 0;
+        }
+        100% {
+            left: -100%;
+            opacity: 0;
+        }
+    }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #gallery h2 {
+        font-size: 2rem;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    #gallery p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #555;
+        max-width: 80%;
+        margin: 0 auto 30px auto;
+    }
+
+    /* Gallery Container */
+    .gallery-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        height: 400px; /* Increased height for better proportion */
+        width: 100%;
+        max-width: 900px; /* Ensures proper centering */
+        margin: 0 auto;
+        border-radius: 15px;
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); */
+    }
+
+    /* Gallery Images */
+    .gallery-grid img {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        width: 85%; /* Increased for better visibility */
+        max-width: 700px; /* Larger max width for better scaling */
+        height: auto;
+        opacity: 0;
+        animation: slideImages 9s ease-in-out infinite; /* Smooth & extended animation */
+    }
+
+    /* Sliding Animation */
+    @keyframes slideImages {
+        0% {
+            left: 120%;
+            opacity: 0;
+        }
+        15% {
+            left: 50%;
+            opacity: 1;
+        }
+        45% {
+            left: 50%;
+            opacity: 1;
+        }
+        80% {
+            left: -20%;
+            opacity: 0;
+        }
+        100% {
+            left: -100%;
+            opacity: 0;
+        }
+    }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    #gallery {
+        padding-top: 40px; /* Adjusted top padding */
+        padding-bottom: 60px; /* Adjusted bottom padding */
+    }
+  
+    #gallery h2 {
+        font-size: 1.8em; /* Slightly reduced */
+    }
+  
+    #gallery p {
+        font-size: 0.95em; /* Adjusted for readability */
+        margin-bottom: 30px;
+    }
+  
+    .gallery-grid {
+        width: 95%; /* Slightly increased width for better fit */
+        margin: 0px auto;
+        max-width: 80%; /* Adjusted max-width */
+    }
+  
+    .gallery-grid-above, .gallery-grid-below {
+        grid-gap: 15px; /* Reduced gap for better spacing */
+        margin-top: 15px;
+    }
+  
+    .gallery-small-img {
+        max-height: 180px; /* Slightly reduced */
+    }
+  
+    .gallery-big-img {
+        max-height: 380px; /* Adjusted for better fit */
+    }
+  
+    #lightbox img {
+        max-width: 85%;
+        max-height: 85%;
+    }
+  
+    .cancelBtn {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+    }
+  }
+  
+/* ############################################################ */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+    #gallery {
+        padding-top: 40px; /* Adjusted top padding */
+        padding-bottom: 60px; /* Adjusted bottom padding */
+    }
+  
+    #gallery h2 {
+        font-size: 2em; /* Slightly reduced */
+    }
+  
+    #gallery p {
+        font-size: 1em; /* Adjusted for readability */
+        margin-bottom: 40px;
+    }
+    .cancelBtn {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+    }
+    #lightbox img {
+        max-width: 85%;
+        max-height: 85%;
+    }
+    .gallery-small-img {
+        max-height: 200px; /* Slightly reduced */
+    }
+  
+    .gallery-big-img {
+        max-height: 420px; /* Adjusted for better fit */
+    }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+    #gallery {
+      /* Increase top and bottom padding for extra spacious feel */
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+  
+    #gallery h2 {
+      /* Increase the heading size for larger displays */
+      font-size: 2.5em;
+    }
+  
+    #gallery p {
+      /* Upscale paragraph text and spacing */
+      font-size: 1.3em;
+      margin-bottom: 50px;
+    }
+  
+    .cancelBtn {
+      /* Increase the offset so the button remains proportionate */
+      position: absolute;
+      top: 40px;
+      right: 60px;
+    }
+    #lightbox img {
+        max-width: 85%;
+        max-height: 85%;
+    }
+    .gallery-small-img {
+        max-height: 240px; /* Slightly reduced */
+    }
+  
+    .gallery-big-img {
+        max-height: 500px; /* Adjusted for better fit */
+    }
+  }
+  
+/* ############################################################ */
+@media screen and (min-width: 1901px) {
+    #gallery {
+      /* Increase top and bottom padding for an even more spacious layout */
+      padding-top: 80px;
+      padding-bottom: 100px;
+    }
     
+    #gallery h2 {
+      /* Increase the heading size further */
+      font-size: 3em;
+    }
+    
+    #gallery p {
+      /* Upscale paragraph text and spacing further */
+      font-size: 1.5em;
+      margin-bottom: 60px;
+    }
+    
+    .cancelBtn {
+      /* Increase the offset so the button stays proportionate */
+      position: absolute;
+      top: 50px;
+      right: 80px;
+    }
+    
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+    
+    .gallery-small-img {
+      max-height: 290px; /* Increased for larger screens */
+    }
+    
+    .gallery-big-img {
+      max-height: 600px; /* Increased for a better fit on expansive screens */
+    }
+  }
+  
 
 
 
 
 
-
+  
 /* ############################################################################################################# */
  /* Contact Section Container */
   /* Contact Section Container */
@@ -894,15 +2368,16 @@ nav ul li a:hover {
   transform: scale(1.02);
 }
 
-/* Responsive Design */
+/* ############################################################ */
 /* Responsive Design for Small Screens */
 @media (max-width: 480px) { 
   /* Container: Stack Sections Vertically */
   #contact {
     flex-direction: column; /* Stack sections vertically */
-    padding: 20px;
+    padding: 20px 10px;
     gap: 20px; /* Add space between sections */
     align-items: center; /* Center align items */
+    width: 100%;
   }
 
   /* Centered Contact Form */
@@ -960,11 +2435,12 @@ nav ul li a:hover {
   /* Distinct Left Section */
   .left-section {
     order: 2; /* Ensure the left section appears second */
-    max-width: 90%; /* Center align the left section */
+    max-width: 90%; 
+    /* Center align the left section */
     padding: 20px;
-    background-color: #f3ede7; /* Softer background to differentiate */
+    /* background-color: #f3ede7; */
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
     font-family: "DM Sans", serif;
     text-align: center;
   }
@@ -1025,14 +2501,527 @@ nav ul li a:hover {
   }
 }
 
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  /* Container: Stack Sections Vertically */
+  #contact {
+    flex-direction: column;
+    padding: 25px 2%; /* Increased padding */
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Centered Contact Form */
+  #contact .contact-form {
+    order: 1;
+    min-width: 60%; /* Slightly increased width */
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #contact .contact-form h2 {
+    font-size: 24px; /* Slightly larger heading */
+    margin-bottom: 25px;
+    color: #222;
+  }
+
+  #contact .contact-form label {
+    font-size: 14px; /* Slightly larger labels */
+    color: #444;
+    text-align: left;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    font-size: 14px; /* Slightly larger inputs */
+    width: 90%; /* Increased width */
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+    background-color: #f9f9f9;
+  }
+
+  #contact .contact-form button {
+    font-size: 16px;
+    padding: 14px 0;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #ffffff;
+    width: 50%; /* Increased button width */
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  #contact .contact-form button:hover {
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    transform: scale(1.07);
+  }
+
+  /* Distinct Left Section */
+  .left-section {
+    order: 2;
+    max-width: 90%;
+    padding: 25px;
+    /* background-color: #f3ede7; */
+    border-radius: 15px;
+    /* box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1); */
+    font-family: "DM Sans", serif;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .left-section h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    color: #5a3c30;
+    font-weight: bold;
+  }
+
+  .left-section p {
+    font-size: 16px;
+    color: #5a3c30;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .left-section .address-block {
+    margin-bottom: 18px;
+  }
+
+  .left-section .address-block h3 {
+    font-size: 18px;
+    color: #7d4a3c;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #7d4a3c;
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+
+  .left-section .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 18px; /* More spacing between icons */
+  }
+
+  .left-section .social-icons .icon-circle {
+    width: 45px; /* Increased icon size */
+    height: 45px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .left-section .social-icons .icon-circle:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .left-section .social-icons img {
+    width: 22px; /* Increased icon size */
+    height: 22px;
+    filter: invert(36%) sepia(22%) saturate(653%) hue-rotate(320deg) brightness(94%) contrast(85%);
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+   /* Container: Stack Sections Vertically */
+   #contact {
+    flex-direction: column;
+    padding: 25px 2%; /* Increased padding */
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Centered Contact Form */
+  #contact .contact-form {
+    order: 1;
+    min-width: 50%; /* Slightly increased width */
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #contact .contact-form h2 {
+    font-size: 24px; /* Slightly larger heading */
+    margin-bottom: 25px;
+    color: #222;
+  }
+
+  #contact .contact-form label {
+    font-size: 14px; /* Slightly larger labels */
+    color: #444;
+    text-align: left;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    font-size: 14px; /* Slightly larger inputs */
+    width: 90%; /* Increased width */
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+    background-color: #f9f9f9;
+  }
+
+  #contact .contact-form button {
+    font-size: 16px;
+    padding: 14px 0;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #ffffff;
+    width: 50%; /* Increased button width */
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  #contact .contact-form button:hover {
+    background: linear-gradient(90deg, #0056b3, #007bff);
+    transform: scale(1.07);
+  }
+
+  /* Distinct Left Section */
+  .left-section {
+    order: 2;
+    max-width: 80%;
+    padding: 25px;
+    /* background-color: #f3ede7; */
+    border-radius: 15px;
+    /* box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1); */
+    font-family: "DM Sans", serif;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .left-section h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    color: #5a3c30;
+    font-weight: bold;
+  }
+
+  .left-section p {
+    font-size: 16px;
+    color: #5a3c30;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .left-section .address-block {
+    margin-bottom: 18px;
+  }
+
+  .left-section .address-block h3 {
+    font-size: 18px;
+    color: #7d4a3c;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #7d4a3c;
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+
+  .left-section .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 18px; /* More spacing between icons */
+  }
+
+  .left-section .social-icons .icon-circle {
+    width: 45px; /* Increased icon size */
+    height: 45px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .left-section .social-icons .icon-circle:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .left-section .social-icons img {
+    width: 22px; /* Increased icon size */
+    height: 22px;
+    filter: invert(36%) sepia(22%) saturate(653%) hue-rotate(320deg) brightness(94%) contrast(85%);
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  /* Adjust overall contact section padding */
+  #contact {
+    padding: 80px;
+    gap: 20px;
+  }
+
+  /* Left Section remains 50% width, with slightly reduced padding */
+  .left-section {
+    max-width: 50%;
+    padding: 35px;
+  }
+
+  /* Right Section (Contact Form) remains 50% width, with slightly reduced padding */
+  #contact .contact-form {
+    max-width: 50%;
+    padding: 40px;
+  }
+
+  /* Adjust heading sizes for both sections */
+  /* If there's any h1 present inside #contact */
+  #contact h1 {
+    font-size: 26px;
+  }
+
+  /* Left Section heading */
+  .left-section h2 {
+    font-size: 24px;
+  }
+
+  /* Contact Form heading */
+  #contact .contact-form h2 {
+    font-size: 24px;
+  }
+
+  /* Adjust paragraph text for better readability */
+  .left-section p,
+  .left-section .address-block p {
+    font-size: 15px;
+  }
+
+  /* Adjust labels and input text sizes in the contact form */
+  #contact .contact-form label {
+    font-size: 14px;
+  }
+
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    font-size: 14px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+  /* Adjust overall container padding and gap */
+  #contact {
+    padding: 5.5em; /* originally 80px (5em) now slightly increased */
+    gap: 1em;      /* originally ~0.94em, rounded up to 1em */
+  }
+
+  /* Left Section adjustments */
+  .left-section {
+    padding: 2em;  /* originally 30px (~1.88em) now rounded up */
+    max-width: 45%;
+  }
+
+  .left-section h2 {
+    font-size: 1.6em;       /* originally 24px (1.5em) now increased slightly */
+    margin-bottom: 1em;     /* originally 15px (~0.94em) now rounded to 1em */
+  }
+
+  .left-section p {
+    font-size: 1em;         /* originally ~0.94em, rounded to 1em */
+    margin-bottom: 1em;     /* originally ~0.94em, rounded to 1em */
+  }
+
+  .left-section .address-block h3 {
+    font-size: 1.2em;       /* originally 18px (1.125em) now increased slightly */
+    margin-bottom: 0.6em;   /* originally 8px (0.5em) now increased */
+  }
+
+  .left-section .address-block p {
+    font-size: 1em;         /* originally 15px (~0.94em) now 1em */
+    margin: 0.5em 0;        /* originally 6px (~0.375em) now increased to 0.5em */
+  }
+
+  /* Contact Form Container adjustments */
+  #contact .contact-form {
+    padding: 2.8em;         /* originally 40px (2.5em) now increased */
+    max-width: 45%;
+  }
+
+  #contact .contact-form h2 {
+    font-size: 1.6em;       /* originally 24px (1.5em) now increased */
+    margin-bottom: 1.7em;   /* originally 25px (1.56em) now increased */
+  }
+
+  #contact .contact-form label {
+    font-size: 1em;         /* originally 15px (~0.94em) now 1em */
+    margin-bottom: 0.5em;   /* originally 6px (0.375em) now increased */
+  }
+
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    padding: 1em 1.1em;     /* originally 14px 16px (~0.88em 1em) now increased */
+    margin-bottom: 1.7em;   /* originally 25px (1.56em) now increased */
+    font-size: 0.85em;      /* originally 13px (~0.81em) now slightly increased */
+  }
+
+  #contact .contact-form textarea {
+    min-height: 8em;       /* originally 120px (7.5em) now increased */
+  }
+
+  #contact .contact-form button {
+    padding: 1em 0;        /* originally 14px (~0.88em) now increased */
+    font-size: 1em;         /* originally 15px (~0.94em) now increased */
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) and (max-width: 1900px) {
+  #contact {
+    padding: 8em;    /* Increased from 7em */
+    gap: 1.5em;      /* Increased gap */
+  }
   
+  .left-section {
+    padding: 3em;    /* Increased from 2.5em */
+    max-width: 45%;
+  }
+  
+  .left-section h2 {
+    font-size: 2em;         /* Increased from 1.8em */
+    margin-bottom: 1.5em;   /* Increased from 1.2em */
+  }
+  
+  .left-section p {
+    font-size: 1.2em;       /* Increased from 1.1em */
+    margin-bottom: 1.5em;   /* Increased from 1.2em */
+  }
+  
+  .left-section .address-block h3 {
+    font-size: 1.6em;       /* Increased from 1.4em */
+    margin-bottom: 1em;     /* Increased from 0.8em */
+  }
+  
+  .left-section .address-block p {
+    font-size: 1.2em;       /* Increased from 1.1em */
+    margin: 0.8em 0;        /* Increased from 0.6em */
+  }
+  
+  #contact .contact-form {
+    padding: 4em;           /* Increased from 3.5em */
+    max-width: 45%;
+  }
+  
+  #contact .contact-form h2 {
+    font-size: 2em;         /* Increased from 1.8em */
+    margin-bottom: 2.2em;   /* Increased from 2em */
+  }
+  
+  #contact .contact-form label {
+    font-size: 1.2em;       /* Increased from 1.1em */
+    margin-bottom: 0.8em;   /* Increased from 0.6em */
+  }
+  
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    padding: 1.4em 1.5em;   /* Increased from 1.2em 1.3em */
+    margin-bottom: 2.2em;   /* Increased from 2em */
+    font-size: 1em;         /* Increased from 0.95em */
+  }
+  
+  #contact .contact-form textarea {
+    min-height: 10em;       /* Increased from 9em */
+  }
+  
+  #contact .contact-form button {
+    padding: 1.4em 0;       /* Increased from 1.2em 0 */
+    font-size: 1.2em;       /* Increased from 1.1em */
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1901px) {
+  #contact {
+    padding: 10em;    /* increased from 8em */
+    gap: 2em;         /* increased from 1.5em */
+  }
+  
+  .left-section {
+    padding: 3.5em;   /* increased from 3em */
+    max-width: 45%;
+  }
+  
+  .left-section h2 {
+    font-size: 2.2em;      /* increased from 2em */
+    margin-bottom: 1.8em;  /* increased from 1.5em */
+  }
+  
+  .left-section p {
+    font-size: 1.3em;      /* increased from 1.2em */
+    margin-bottom: 1.8em;  /* increased from 1.5em */
+  }
+  
+  .left-section .address-block h3 {
+    font-size: 1.8em;      /* increased from 1.6em */
+    margin-bottom: 1.2em;  /* increased from 1em */
+  }
+  
+  .left-section .address-block p {
+    font-size: 1.3em;      /* increased from 1.2em */
+    margin: 1em 0;         /* increased from 0.8em 0 */
+  }
+  
+  #contact .contact-form {
+    padding: 5em;          /* increased from 4em */
+    max-width: 45%;
+  }
+  
+  #contact .contact-form h2 {
+    font-size: 2.2em;      /* increased from 2em */
+    margin-bottom: 2.5em;  /* increased from 2.2em */
+  }
+  
+  #contact .contact-form label {
+    font-size: 1.3em;      /* increased from 1.2em */
+    margin-bottom: 1em;    /* increased from 0.8em */
+  }
+  
+  #contact .contact-form input,
+  #contact .contact-form textarea {
+    padding: 1.6em 1.7em;  /* increased from 1.4em 1.5em */
+    margin-bottom: 2.5em;  /* increased from 2.2em */
+    font-size: 1.1em;      /* increased from 1em */
+  }
+  
+  #contact .contact-form textarea {
+    min-height: 11em;      /* increased from 10em */
+  }
+  
+  #contact .contact-form button {
+    padding: 1.6em 0;      /* increased from 1.4em 0 */
+    font-size: 1.3em;      /* increased from 1.2em */
+  }
+}
+
+
 
 
 
 
 /* ############################################################################################################# */
 /* Footer Section */
-/* Footer Styles */
 footer {
   background-color: #5a3c30; /* Choose a complementary color */
   color: #ffffff;
@@ -1051,8 +3040,30 @@ footer p {
   color: #e8dad1;
 }
 
+/* ############################################################ */
 @media (max-width: 480px) {
   footer {
     font-size: 16px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  footer {
+    font-size: 20px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  footer {
+    font-size: 20px;
+  }
+}
+
+/* ############################################################ */
+@media screen and (min-width: 1441px) {
+  footer {
+    font-size: 24px;
   }
 }
