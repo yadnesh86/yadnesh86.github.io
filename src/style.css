@@ -504,7 +504,7 @@ nav ul li a {
   background-color: #e8dad1;
   min-height: 80vh;
   width: 100%; /* Ensures the section takes full width */
-  color: #333333;
+  color: #6d4337;
   font-family: "DM Sans", serif; 
   padding: 80px 20px;
 }
@@ -539,6 +539,8 @@ nav ul li a {
 /* Paragraph styling for the description text */
 .home-paragraph {
   font-size: 1rem;
+  color: #333333;
+  font-weight: 400;
   max-width: 800px;
   margin-left: 90px;
   text-align: left;
