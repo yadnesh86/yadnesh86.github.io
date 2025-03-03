@@ -2107,51 +2107,45 @@ nav ul li a {
   }
 
   .gallery-grid {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      height: 260px; /* Slightly reduced height */
-      width: 100%;
-      max-width: 280px; /* Ensures proper centering */
-      margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    min-height: 250px; /* Adjust as needed */
+    margin: 0 auto;
+    overflow: hidden;
   }
-
+  
   .gallery-grid img {
-      position: absolute;
-      top: 50%;
-      left: 100%; /* Start completely off-screen */
-      transform: translate(-50%, -50%);
-      width: 85%; /* Adjusted width for better visibility */
-      max-width: 300px; /* Prevents oversized images */
-      height: auto;
-      opacity: 0;
-      animation: slideImages 6s linear infinite;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 300px;
+    min-height: 200px;
+    opacity: 0;
+    animation: slideImages 36s ease-in-out infinite;
+    animation-fill-mode: forwards;
   }
-
-  /* Smoother Sliding Animation */
+  
+  
+  /* Keyframes: Each image slides in from right, appears at center, then slides out left.  
+     In a 36s cycle, we make the image visible from 10% to 26.67% (3.6s to 9.6s) */
   @keyframes slideImages {
-      0% {
-          left: 110%; /* Start slightly off-screen */
-          opacity: 0;
-      }
-      15% {
-          left: 50%; /* Move to center */
-          opacity: 1;
-      }
-      50% {
-          left: 50%; /* Stay in center */
-          opacity: 1;
-      }
-      85% {
-          left: -10%; /* Move slightly left before disappearing */
-          opacity: 0;
-      }
-      100% {
-          left: -100%; /* Fully move off-screen */
-          opacity: 0;
-      }
+    0%, 10% {
+      left: 100%;
+      opacity: 0;
+    }
+    10%, 26.67% {
+      left: 50%;
+      opacity: 1;
+    }
+    26.67%, 100% {
+      left: -10%;
+      opacity: 0;
+    }
   }
 }
 
@@ -2168,51 +2162,45 @@ nav ul li a {
 }
 
 .gallery-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Needed for absolute positioning of images */
-    overflow: hidden; /* Hide overflowing content */
-    height: 250px; /* Adjust to your preference */
-    width: 100%;
-    max-width: 400px; /* Ensures proper centering */
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  min-height: 350px; /* Adjust as needed */
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .gallery-grid img {
-    position: absolute;
-    top: 50%;
-    left: 100%; /* Start completely off-screen (right side) */
-    transform: translate(-50%, -50%);
-    width: 90%; /* Adjust width for responsiveness */
-    max-width: 350px; /* Prevents too large images */
-    height: auto;
-    opacity: 0; /* Hide before animation starts */
-    animation: slideImages 6s linear infinite;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 350px;
+  min-height: 250px;
+  opacity: 0;
+  animation: slideImages 36s ease-in-out infinite;
+  animation-fill-mode: forwards;
 }
 
-/* Sliding Animation */
+
+/* Keyframes: Each image slides in from right, appears at center, then slides out left.  
+   In a 36s cycle, we make the image visible from 10% to 26.67% (3.6s to 9.6s) */
 @keyframes slideImages {
-    0% {
-        left: 100%; /* Start off-screen (right) */
-        opacity: 0;
-    }
-    10% {
-        left: 50%; /* Move to center */
-        opacity: 1;
-    }
-    50% {
-        left: 50%; /* Stay in center for a while */
-        opacity: 1;
-    }
-    90% {
-        left: -10%; /* Move slightly left before disappearing */
-        opacity: 0;
-    }
-    100% {
-        left: -100%; /* Move off-screen (left) */
-        opacity: 0;
-    }
+  0%, 10% {
+    left: 100%;
+    opacity: 0;
+  }
+  10%, 26.67% {
+    left: 50%;
+    opacity: 1;
+  }
+  26.67%, 100% {
+    left: -10%;
+    opacity: 0;
+  }
 }
  }
 
@@ -2229,51 +2217,45 @@ nav ul li a {
     }
 
     .gallery-grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        height: 320px; /* Increased height for better spacing */
-        width: 100%;
-        max-width: 600px; /* Ensures proper centering */
-        margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      min-height: 320px; /* Adjust as needed */
+      margin: 0 auto;
+      overflow: hidden;
     }
-
+    
     .gallery-grid img {
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        transform: translate(-50%, -50%);
-        width: 80%; /* Adjusted for better fit */
-        max-width: 500px; /* Increased max width for better scaling */
-        height: auto;
-        opacity: 0;
-        animation: slideImages 7s ease-in-out infinite; /* Smooth transition */
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      max-width: 500px;
+      min-height: 300px;
+      opacity: 0;
+      animation: slideImages 36s ease-in-out infinite;
+      animation-fill-mode: forwards;
     }
-
-    /* Sliding Animation */
+    
+    
+    /* Keyframes: Each image slides in from right, appears at center, then slides out left.  
+       In a 36s cycle, we make the image visible from 10% to 26.67% (3.6s to 9.6s) */
     @keyframes slideImages {
-        0% {
-            left: 120%; /* Start slightly off-screen for a smoother effect */
-            opacity: 0;
-        }
-        15% {
-            left: 50%;
-            opacity: 1;
-        }
-        50% {
-            left: 50%;
-            opacity: 1;
-        }
-        85% {
-            left: -10%;
-            opacity: 0;
-        }
-        100% {
-            left: -100%;
-            opacity: 0;
-        }
+      0%, 10% {
+        left: 100%;
+        opacity: 0;
+      }
+      10%, 26.67% {
+        left: 50%;
+        opacity: 1;
+      }
+      26.67%, 100% {
+        left: -10%;
+        opacity: 0;
+      }
     }
 }
 
@@ -2294,56 +2276,46 @@ nav ul li a {
         margin: 0 auto 30px auto;
     }
 
-    /* Gallery Container */
     .gallery-grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        height: 400px; /* Increased height for better proportion */
-        width: 100%;
-        max-width: 900px; /* Ensures proper centering */
-        margin: 0 auto;
-        border-radius: 15px;
-        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      min-height: 400px; /* Adjust as needed */
+      margin: 0 auto;
+      overflow: hidden;
     }
-
-    /* Gallery Images */
+    
     .gallery-grid img {
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        transform: translate(-50%, -50%);
-        width: 85%; /* Increased for better visibility */
-        max-width: 700px; /* Larger max width for better scaling */
-        height: auto;
-        opacity: 0;
-        animation: slideImages 9s ease-in-out infinite; /* Smooth & extended animation */
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 85%;
+      max-width: 700px;
+      min-height: 360px;
+      opacity: 0;
+      animation: slideImages 36s ease-in-out infinite;
+      animation-fill-mode: forwards;
     }
-
-    /* Sliding Animation */
+    
+    
+    /* Keyframes: Each image slides in from right, appears at center, then slides out left.  
+       In a 36s cycle, we make the image visible from 10% to 26.67% (3.6s to 9.6s) */
     @keyframes slideImages {
-        0% {
-            left: 120%;
-            opacity: 0;
-        }
-        15% {
-            left: 50%;
-            opacity: 1;
-        }
-        45% {
-            left: 50%;
-            opacity: 1;
-        }
-        80% {
-            left: -20%;
-            opacity: 0;
-        }
-        100% {
-            left: -100%;
-            opacity: 0;
-        }
+      0%, 10% {
+        left: 100%;
+        opacity: 0;
+      }
+      10%, 26.67% {
+        left: 50%;
+        opacity: 1;
+      }
+      26.67%, 100% {
+        left: -10%;
+        opacity: 0;
+      }
     }
 }
 

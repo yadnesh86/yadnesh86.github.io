@@ -95,6 +95,17 @@ lightbox.addEventListener('click', closeLightbox);
 cancelButton.addEventListener('click', closeLightbox);
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.gallery-grid img');
+    const baseDelay = 6; // seconds per image slot in the 36s cycle
+    
+    images.forEach((img, index) => {
+      img.style.animationDelay = `${index * baseDelay}s`;
+    });
+  });
+
+
+
 // small screen
 // document.addEventListener("DOMContentLoaded", () => {
 //     const gallery = document.querySelector(".gallery-grid");
@@ -121,7 +132,7 @@ cancelButton.addEventListener('click', closeLightbox);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Gallery Section 
+// Server Section 
 document.getElementById("contactForm").addEventListener("submit", async function(event) {
     event.preventDefault();
 
