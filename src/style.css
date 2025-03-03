@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 
@@ -40,8 +41,8 @@ nav ul li {
 /* Navigation links */
 nav ul li a {
   font-size: 20px;
-  font-family: "DM Sans", serif;
-  font-weight: 300;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
   text-decoration: none;
   color: #8d675a;
   padding: 5px 10px;
@@ -497,15 +498,15 @@ nav ul li a {
 /* Main section styling for background and layout */
 .home-section {
   position: relative; /* Ensures pseudo-element is positioned correctly */
-  background-image: url('../../images/arch4.jpg');
+  background-image: url('../images/arch4.webp');
   background-size: contain; /* Changed to cover for full coverage of the section */
   background-position: center;
   background-repeat: no-repeat;
   background-color: #e8dad1;
-  min-height: 80vh;
+  min-height: 85vh;
   width: 100%; /* Ensures the section takes full width */
   color: #6d4337;
-  font-family: "DM Sans", serif; 
+  font-family: "Josefin Sans", sans-serif; 
   padding: 80px 20px;
 }
 
@@ -687,7 +688,7 @@ nav ul li a {
 /* Home section adjustments */
 .home-section {
   padding: 50px auto; /* Increased padding for better spacing */
-  min-height: 75vh; /* Slightly increased height for better content fit */
+  min-height: 80vh; /* Slightly increased height for better content fit */
   display: flex;
   flex-direction: column;
   align-items: center;  /* Centers all child elements */
@@ -723,7 +724,7 @@ nav ul li a {
 /* ############################################################ */
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
 .home-section {
-    min-height: 75vh; /* Slightly reduced height */
+    min-height: 80vh; /* Slightly reduced height */
     padding: 60px 20px;
 }
 
@@ -852,7 +853,7 @@ nav ul li a {
   margin: 0px auto;
   padding: 8rem 6rem;
   gap: 40px;
-  font-family: "DM Sans", serif;
+  font-family: "Josefin Sans", sans-serif;
   color: #333;
   background-color: #f9f9f9;
   min-height: 70vh;
@@ -1504,7 +1505,7 @@ nav ul li a {
   #services {
     background-color: #e8dad1;
     padding: 50px 20px;
-    font-family: "DM Sans", serif;
+    font-family: "Josefin Sans", sans-serif;
     text-align: center;
     width: 100%;
   }
@@ -1547,7 +1548,7 @@ nav ul li a {
   .service-content {
     /* background: rgba(0, 0, 0, 0.6); Semi-transparent overlay for text readability */
     color: #fff;
-    font-family: "DM Sans", serif;
+    font-family: "Josefin Sans", sans-serif;
     text-align: center;
     padding: 20px;
     border-radius: 8px;
@@ -1961,7 +1962,7 @@ nav ul li a {
   /* Gallery Section Styling */
   #gallery {
     text-align: center;
-    font-family: "DM Sans", serif;
+    font-family: "Josefin Sans", sans-serif;
     color: #333;
     background-color: #f9f9f9;
     padding-top: 50px;
@@ -2503,7 +2504,7 @@ nav ul li a {
   max-width: 50%;
   padding: 40px;
   background-color: #e8dad1;
-  font-family: "DM Sans", serif;
+  font-family: "Josefin Sans", sans-serif;
   /* border-radius: 12px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   border: 2px solid #d3b8a4; */
